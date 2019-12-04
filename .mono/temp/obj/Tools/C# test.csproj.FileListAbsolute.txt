@@ -1,0 +1,5 @@
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/bin/Tools/C# test.dll
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/bin/Tools/C# test.pdb
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# test.csprojAssemblyReference.cache
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# test.dll
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# test.pdb

@@ -1,0 +1,90 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/fatCow.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/fatCow_small.tres" type="DynamicFont" id=2]
+[ext_resource path="res://MainMenu/MenuButton.tscn" type="PackedScene" id=3]
+
+[node name="Settings" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -1.05267
+margin_bottom = -1.05267
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 50.0
+margin_top = 50.0
+margin_right = -50.0
+margin_bottom = -50.0
+custom_constants/separation = 50
+
+[node name="Title" type="Label" parent="VBoxContainer"]
+margin_right = 924.0
+margin_bottom = 73.0
+custom_fonts/font = ExtResource( 1 )
+text = "Settings"
+align = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 123.0
+margin_right = 924.0
+margin_bottom = 158.0
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 234.0
+margin_right = 285.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+text = "Sound: "
+
+[node name="Sound" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+margin_left = 289.0
+margin_right = 689.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 400, 0 )
+value = 100.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 208.0
+margin_right = 924.0
+margin_bottom = 243.0
+alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 235.0
+margin_right = 285.0
+margin_bottom = 35.0
+custom_fonts/font = ExtResource( 2 )
+text = "Music: "
+
+[node name="Music" type="HSlider" parent="VBoxContainer/HBoxContainer2"]
+margin_left = 289.0
+margin_right = 689.0
+margin_bottom = 16.0
+rect_min_size = Vector2( 400, 0 )
+value = 100.0
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 293.0
+margin_right = 924.0
+margin_bottom = 336.0
+
+[node name="FullScreenBtn" type="CheckButton" parent="VBoxContainer/CenterContainer"]
+margin_left = 382.0
+margin_right = 541.0
+margin_bottom = 43.0
+custom_fonts/font = ExtResource( 2 )
+text = "Fullscreen: "
+
+[node name="CenterContainer2" type="CenterContainer" parent="VBoxContainer"]
+margin_top = 386.0
+margin_right = 924.0
+margin_bottom = 461.0
+
+[node name="Button" parent="VBoxContainer/CenterContainer2" instance=ExtResource( 3 )]
+margin_left = 349.0
+margin_right = 574.0
+margin_bottom = 75.0
+text = "Back to menu"

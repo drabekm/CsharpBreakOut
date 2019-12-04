@@ -1,0 +1,5 @@
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/bin/Tools/C# breakout.dll
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/bin/Tools/C# breakout.pdb
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# breakout.csprojAssemblyReference.cache
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# breakout.dll
+/home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# breakout.pdb
