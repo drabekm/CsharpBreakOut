@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GameScene\Ball\Ball.cs" />
+    <Compile Include="GameScene\Block\Block.cs" />
     <Compile Include="GameScene\Player\Player.cs" />
     <Compile Include="HighScoreMenu\HighScore.cs" />
     <Compile Include="MainMenu\MainMenu.cs" />

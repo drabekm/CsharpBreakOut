@@ -10,7 +10,7 @@ public class MainMenu : Control
 {
 	
     enum buttonStates {NewGame, HighScore, Settings, Exit};
-    int pressedButton = 0;
+    int pressedButton = -1;
     AnimationPlayer ap; //Used for fade in/out
     public override void _Ready()
     {
@@ -64,7 +64,7 @@ public class MainMenu : Control
         switch(pressedButton)
         {
             case (int)buttonStates.NewGame:
-                
+                GetTree().ChangeScene("res://GameScene/Game.tscn");
             break;
 
             case (int)buttonStates.HighScore:

@@ -1,21 +1,54 @@
 using Godot;
 using System;
 
-public class Ball : KinematicBody2D
+public class Ball : RigidBody2D
 {
-    // Declare member variables here. Examples:
-    // private int a = 2;
-    // private string b = "text";
-
-    // Called when the node enters the scene tree for the first time.
+	const int startSpeed = 250;
+    public int speed = startSpeed;
+	bool isStarted = false;
+	
+	Vector2 direction = new Vector2(0,0);
+	Random rnd = new Random();
+	
     public override void _Ready()
     {
-        
     }
+	
+	public void Start()
+	{
+		if(!isStarted)
+		{
+			this.GlobalPosition = new Vector2(520, 540);
+			isStarted = true;
+			int angle = rnd.Next(30,150);
+			direction = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
+			SetAxisVelocity(direction * speed);
+		}
+	}
 
-//  // Called every frame. 'delta' is the elapsed time since the previous frame.
-//  public override void _Process(float delta)
-//  {
-//      
-//  }
+	private void Reset()
+	{
+		isStarted = false;
+		this.SetLinearVelocity(new Vector2(0,0));
+		this.GlobalPosition = new Vector2(520, 540);
+	}
+
+	public override void _PhysicsProcess(float delta)
+	{
+		if(this.GlobalPosition.y >  660)
+		{
+			Reset();
+		}
+	}
+	
+	private void _on_Ball_body_entered(object body)
+	{
+		if(body is Block)
+		{
+			Block block = (Block)body;
+			block.QueueFree();
+			this.speed += 5;
+			SetAxisVelocity(direction * speed);
+		}
+	}
 }
