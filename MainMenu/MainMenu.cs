@@ -64,7 +64,7 @@ public class MainMenu : Control
         switch(pressedButton)
         {
             case (int)buttonStates.NewGame:
-                //TODO: change scene to the new game
+                
             break;
 
             case (int)buttonStates.HighScore:
@@ -72,7 +72,7 @@ public class MainMenu : Control
             break;
 
             case (int)buttonStates.Settings:
-                //TOOD: change scene to the settings scene
+                GetTree().ChangeScene("res://SettingsMenu/Settings.tscn");
             break;
 
             case (int)buttonStates.Exit:

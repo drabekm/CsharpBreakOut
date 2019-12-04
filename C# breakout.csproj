@@ -49,9 +49,12 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameScene\Ball\Ball.cs" />
+    <Compile Include="GameScene\Player\Player.cs" />
     <Compile Include="HighScoreMenu\HighScore.cs" />
     <Compile Include="MainMenu\MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SettingsMenu\Settings.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
