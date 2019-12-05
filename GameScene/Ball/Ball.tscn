@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://GameScene/Ball/Ball.cs" type="Script" id=1]
 [ext_resource path="res://GameScene/Ball/Ball.png" type="Texture" id=2]
+[ext_resource path="res://GameScene/Ball/Helper.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 friction = 0.0
 bounce = 1.0
 
-[sub_resource type="CircleShape2D" id=2]
-radius = 17.2485
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16.205, 15.7597 )
 
 [node name="Ball" type="RigidBody2D"]
+position = Vector2( 508.432, 272.183 )
 physics_material_override = SubResource( 1 )
 gravity_scale = 0.0
 contacts_reported = 1
@@ -24,4 +26,7 @@ texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 2 )
+
+[node name="Helper" type="Node" parent="."]
+script = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Ball_body_entered"]

@@ -22,8 +22,15 @@ public class Settings : Control
 			GetTree().ChangeScene("res://MainMenu/MainMenu.tscn");
 		}
 	}
-
+	
+	
+	private void _on_FullScreenBtn_toggled(bool button_pressed)
+	{
+		OS.WindowFullscreen = button_pressed;
+	}
 }
+
+
 
 
 

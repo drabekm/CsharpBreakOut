@@ -40,7 +40,7 @@ public class HighScore : Control
 			
 			for(int i = 0; i < maxLines; i++) //Saves an empty score list
 			{   //All data is stored as NAME : SCORE ; NAME2 : SCORE2 ; ...
-				scoreFile.StoreString("JohnDoe" + i + " : " + 0+";");
+				scoreFile.StoreString("JohnDoe" + i + " : " + 0 +";");
 			}
 	}
 

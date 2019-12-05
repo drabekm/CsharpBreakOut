@@ -1,17 +1,20 @@
 using Godot;
 using System;
 
+
 public class Ball : RigidBody2D
 {
 	const int startSpeed = 250;
     public int speed = startSpeed;
 	bool isStarted = false;
-	
+	public int skore = 0;
 	Vector2 direction = new Vector2(0,0);
 	Random rnd = new Random();
 	
     public override void _Ready()
     {
+		var playerVariables = (vars)GetNode("/root/vars");
+		playerVariables.inGame = true; // Instance field.
     }
 	
 	public void Start()
@@ -20,8 +23,9 @@ public class Ball : RigidBody2D
 		{
 			this.GlobalPosition = new Vector2(520, 540);
 			isStarted = true;
-			int angle = rnd.Next(30,150);
-			direction = new Vector2((float)Math.Cos(angle), (float)Math.Sin(angle));
+			double angle = (double)rnd.Next(0,20) - 100.0;
+			double rad =  Math.PI * angle / 180.0;
+			direction = new Vector2((float)Math.Cos(rad), (float)Math.Sin(rad));
 			SetAxisVelocity(direction * speed);
 		}
 	}
@@ -31,6 +35,8 @@ public class Ball : RigidBody2D
 		isStarted = false;
 		this.SetLinearVelocity(new Vector2(0,0));
 		this.GlobalPosition = new Vector2(520, 540);
+		var playerVariables = (vars)GetNode("/root/vars");
+		playerVariables.lives -= 1; // Instance field.
 	}
 
 	public override void _PhysicsProcess(float delta)
@@ -46,9 +52,22 @@ public class Ball : RigidBody2D
 		if(body is Block)
 		{
 			Block block = (Block)body;
-			block.QueueFree();
+			
 			this.speed += 5;
-			SetAxisVelocity(direction * speed);
+			
+			var playerVariables = (vars)GetNode("/root/vars");
+			playerVariables.skore += 5; // Instance field.
+			
+			block.QueueFree();
+		}
+		else if(body is Player)
+		{
+			GD.Print("AAAAAAAAAAAAA");
+			Player player = (Player)body;
+			Vector2 direction = this.GlobalPosition - ((Position2D)player.GetNode("HelpPos")).GlobalPosition;
+			Vector2 velocity = direction.Normalized() * speed;
+			speed += 5;
+			this.SetLinearVelocity(velocity);
 		}
 	}
 }

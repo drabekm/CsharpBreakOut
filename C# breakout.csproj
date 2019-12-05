@@ -49,13 +49,16 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameOverScene\GameOver.cs" />
     <Compile Include="GameScene\Ball\Ball.cs" />
+    <Compile Include="GameScene\BlockCreator\BlockCreator.cs" />
     <Compile Include="GameScene\Block\Block.cs" />
     <Compile Include="GameScene\Player\Player.cs" />
     <Compile Include="HighScoreMenu\HighScore.cs" />
     <Compile Include="MainMenu\MainMenu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SettingsMenu\Settings.cs" />
+    <Compile Include="vars.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

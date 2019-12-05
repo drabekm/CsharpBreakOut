@@ -132,5 +132,6 @@ color = Color( 0, 0, 0, 1 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect"]
 anims/FadeIn = SubResource( 1 )
 anims/FadeOut = SubResource( 2 )
+[connection signal="toggled" from="VBoxContainer/CenterContainer/FullScreenBtn" to="." method="_on_FullScreenBtn_toggled"]
 [connection signal="pressed" from="VBoxContainer/CenterContainer2/Button" to="." method="_on_Button_pressed"]
 [connection signal="animation_finished" from="ColorRect/AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

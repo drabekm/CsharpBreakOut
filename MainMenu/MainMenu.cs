@@ -65,6 +65,10 @@ public class MainMenu : Control
         {
             case (int)buttonStates.NewGame:
                 GetTree().ChangeScene("res://GameScene/Game.tscn");
+				var vars = (vars)GetNode("/root/vars");
+				vars.skore = 0;
+				vars.lives = 3;
+				vars.previousSkore = -1;
             break;
 
             case (int)buttonStates.HighScore:
