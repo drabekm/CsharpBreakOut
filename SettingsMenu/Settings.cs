@@ -16,6 +16,7 @@ public class Settings : Control
 		settingFile.Open("user://settings.dat", 1); //Open with WRITE flag
 		//Music value ; Soundfx value ; isFullscreen
 		string allData = settingFile.GetAsText();
+		settingFile.Close();
 		string[] data = allData.Split(';');
 		GD.Print(data[0]);
 		GD.Print(data[1]);
@@ -43,9 +44,15 @@ public class Settings : Control
 		GD.Print(sound.Value);
 		GD.Print(fullscreen.Pressed);
 		if(fullscreen.Pressed)
+		{
+			GD.Print("Save with fullscreen");
 			settingFile.StoreString(music.Value + ";" + sound.Value + ";" + 1);
+		}
 		else
+		{
+			GD.Print("Save without fullscreen");
 			settingFile.StoreString(music.Value + ";" + sound.Value + ";" + 0);
+		}
 		settingFile.Close();
 	    ap.Play("FadeOut");
 	}

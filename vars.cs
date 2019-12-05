@@ -37,6 +37,9 @@ public class vars : Node
 		string[] data = allData.Split(';');
 		music = int.Parse(data[0]);
 		sound = int.Parse(data[1]);
+		GD.Print("VAR START FILE EXISTS");
+		GD.Print(music);
+		GD.Print(sound);
 		if(data[2] == ('1').ToString())
 		{
 			OS.WindowFullscreen = true;
@@ -47,7 +50,7 @@ public class vars : Node
 			OS.WindowFullscreen = false;
 			fullscreen = false;
 		}
-		settingFile.Close();
+		
 	}
 	
 	void SaveDefault (File settingFile)

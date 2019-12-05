@@ -3,3 +3,9 @@
 /home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# breakout.csprojAssemblyReference.cache
 /home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# breakout.dll
 /home/matej/Documents/programovani/Godot games/C# test/.mono/temp/obj/Tools/C# breakout.pdb
+C:\Users\matej\Documents\Programovani\C#\BreakOut\CsharpBreakOut\.mono\temp\bin\Tools\C# breakout.dll
+C:\Users\matej\Documents\Programovani\C#\BreakOut\CsharpBreakOut\.mono\temp\bin\Tools\C# breakout.pdb
+C:\Users\matej\Documents\Programovani\C#\BreakOut\CsharpBreakOut\.mono\temp\obj\Tools\C# breakout.csprojAssemblyReference.cache
+C:\Users\matej\Documents\Programovani\C#\BreakOut\CsharpBreakOut\.mono\temp\obj\Tools\C# breakout.csproj.CoreCompileInputs.cache
+C:\Users\matej\Documents\Programovani\C#\BreakOut\CsharpBreakOut\.mono\temp\obj\Tools\C# breakout.dll
+C:\Users\matej\Documents\Programovani\C#\BreakOut\CsharpBreakOut\.mono\temp\obj\Tools\C# breakout.pdb
