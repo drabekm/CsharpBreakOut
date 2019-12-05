@@ -6,9 +6,9 @@ public class vars : Node
     public int skore = 0;
 	public int previousSkore = -1;
 	public int lives = 3;
-	public int music = 100;
-	public int sound = 100;
-	public bool fullscreen = false;
+	public int music;
+	public int sound;
+	public bool fullscreen;
 	public bool inGame = false;
     public override void _Ready()
     {
@@ -17,7 +17,45 @@ public class vars : Node
 			Label liveslbl = (Label)GetNode("/Game/lives");
 			Label score = (Label)GetNode("/Game/score");
 		}
+		
+		var settingFile = new File();
+		if (settingFile.FileExists("user://settings.dat")) //File exists
+		{
+			LoadSettings(settingFile);
+		}
+		else //File doesn't exist -> create a new one
+		{
+			SaveDefault(settingFile);
+		}
+		settingFile.Close();
     }
+	
+	void LoadSettings (File settingFile)
+	{
+		settingFile.Open("user://settings.dat", 1); //Open with READ flag
+		string allData = settingFile.GetAsText();
+		string[] data = allData.Split(';');
+		music = int.Parse(data[0]);
+		sound = int.Parse(data[1]);
+		if(data[2] == ('1').ToString())
+		{
+			OS.WindowFullscreen = true;
+			fullscreen = true;
+		}
+		else
+		{
+			OS.WindowFullscreen = false;
+			fullscreen = false;
+		}
+		settingFile.Close();
+	}
+	
+	void SaveDefault (File settingFile)
+	{
+		settingFile.Open("user://settings.dat", 2); //Open with WRITE flag
+		//Music value ; Soundfx value ; isFullscreen
+		settingFile.StoreString("100;100;0");
+	}
 	
 	public override void _Process(float delta)
 	{

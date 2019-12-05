@@ -13,6 +13,17 @@ public class GameOver : Control
 		ap.Play("FadeIn");
 		var vars = (vars)GetNode("/root/vars");
 		skoreLbl.SetText("Your score was: " + vars.skore);
+		
+		File scoreFile = new File();
+		if (!scoreFile.FileExists("user://score.dat")) //File doesn't exist
+		{
+			scoreFile.Open("user://score.dat", 2); //Open with WRITE flag
+			
+			for(int i = 0; i < 10; i++) //Saves an empty score list
+			{   //All data is stored as NAME : SCORE ; NAME2 : SCORE2 ; ...
+				scoreFile.StoreString("JohnDoe" + i + " : " + 0 +";");
+			}
+		}
     }
 	
 	private void _on_Button_pressed()
@@ -62,6 +73,15 @@ public class GameOver : Control
 				break;
 			}
 		}
+		
+		if(index != -1)
+		{
+			for(int i = 8; i >= index; i--)
+			{
+				pairs[i + 1] = pairs[i];
+			}
+		}
+		
 		
 		scoreFile.Open("user://score.dat", 3);
 		for(int i = 0; i < 10; i++)

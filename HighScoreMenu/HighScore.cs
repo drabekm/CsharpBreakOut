@@ -55,6 +55,8 @@ public class HighScore : Control
 		else //File doesn't exist -> create a new one
 		{
 			SaveEmptyScores(scoreFile);
+			scoreFile.Close();
+			LoadScores(scoreFile);
 		}
 		scoreFile.Close();
     }
